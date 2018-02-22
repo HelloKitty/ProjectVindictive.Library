@@ -33,6 +33,9 @@
     <None Update="Certs\TestCert.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Certs\TLSCert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

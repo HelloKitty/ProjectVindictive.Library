@@ -16,7 +16,7 @@ using HaloLive.Models.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 
-namespace HaloLive.Authentication
+namespace ProjectVindictive
 {
 
 	//From an old OpenIddict OAuth sample and a slightly modified version that I personally use

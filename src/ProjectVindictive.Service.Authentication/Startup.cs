@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using AspNet.Security.OpenIdConnect.Primitives;
+using HaloLive.Authentication;
 using HaloLive.Hosting;
 using HaloLive.Models.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -16,7 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace HaloLive.Authentication.Application
+namespace ProjectVindictive
 {
 	public class Startup
 	{
