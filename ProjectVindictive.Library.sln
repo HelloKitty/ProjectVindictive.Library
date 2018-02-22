@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectVindictive.Service.Authentication", "src\ProjectVindictive.Service.Authentication\ProjectVindictive.Service.Authentication.csproj", "{72E610C5-2818-4846-9F75-5EC264E9C45B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89BE0ADF-EEBC-425A-817B-EFBF25CB070C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{CA8B7231-73F4-445E-B41E-E17AB7FA5D38}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E610C5-2818-4846-9F75-5EC264E9C45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E610C5-2818-4846-9F75-5EC264E9C45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E610C5-2818-4846-9F75-5EC264E9C45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E610C5-2818-4846-9F75-5EC264E9C45B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E610C5-2818-4846-9F75-5EC264E9C45B} = {CA8B7231-73F4-445E-B41E-E17AB7FA5D38}
+		{CA8B7231-73F4-445E-B41E-E17AB7FA5D38} = {89BE0ADF-EEBC-425A-817B-EFBF25CB070C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A7F388A-9DD2-40B2-B5C7-C5FC50756052}
