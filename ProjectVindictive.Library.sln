@@ -11,6 +11,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{CA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectVindictive.Service.UserContentManagement", "src\ProjectVindictive.Service.UserContentManagement\ProjectVindictive.Service.UserContentManagement.csproj", "{65E753D5-191A-44DC-804B-98C65CD57FB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectVindictive.Database.Worlds", "src\ProjectVindictive.Database.Worlds\ProjectVindictive.Database.Worlds.csproj", "{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectVindictive.Database.Common", "src\ProjectVindictive.Database.Common\ProjectVindictive.Database.Common.csproj", "{52787E63-31B8-4074-81E8-8DA743B17776}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectVindictive.Models.UserContentManagement", "src\ProjectVindictive.Models.UserContentManagement\ProjectVindictive.Models.UserContentManagement.csproj", "{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6F2E205D-66AF-45C7-ADE5-59C0763989AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectVindictive.Tests.S3PreSignedUrlTestClient", "tests\ProjectVindictive.Tests.S3PreSignedUrlTestClient\ProjectVindictive.Tests.S3PreSignedUrlTestClient.csproj", "{8B14AEA4-233E-42B5-8220-8FDAC8CC3774}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +35,22 @@ Global
 		{65E753D5-191A-44DC-804B-98C65CD57FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65E753D5-191A-44DC-804B-98C65CD57FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65E753D5-191A-44DC-804B-98C65CD57FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52787E63-31B8-4074-81E8-8DA743B17776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52787E63-31B8-4074-81E8-8DA743B17776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52787E63-31B8-4074-81E8-8DA743B17776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52787E63-31B8-4074-81E8-8DA743B17776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B14AEA4-233E-42B5-8220-8FDAC8CC3774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B14AEA4-233E-42B5-8220-8FDAC8CC3774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B14AEA4-233E-42B5-8220-8FDAC8CC3774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B14AEA4-233E-42B5-8220-8FDAC8CC3774}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +59,10 @@ Global
 		{72E610C5-2818-4846-9F75-5EC264E9C45B} = {CA8B7231-73F4-445E-B41E-E17AB7FA5D38}
 		{CA8B7231-73F4-445E-B41E-E17AB7FA5D38} = {89BE0ADF-EEBC-425A-817B-EFBF25CB070C}
 		{65E753D5-191A-44DC-804B-98C65CD57FB1} = {CA8B7231-73F4-445E-B41E-E17AB7FA5D38}
+		{30DEFFBF-FDFD-49D4-ACA7-BF3AB0620FFE} = {89BE0ADF-EEBC-425A-817B-EFBF25CB070C}
+		{52787E63-31B8-4074-81E8-8DA743B17776} = {89BE0ADF-EEBC-425A-817B-EFBF25CB070C}
+		{CCCA468E-C603-4857-8DDC-BC1DADC0BF8A} = {89BE0ADF-EEBC-425A-817B-EFBF25CB070C}
+		{8B14AEA4-233E-42B5-8220-8FDAC8CC3774} = {6F2E205D-66AF-45C7-ADE5-59C0763989AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A7F388A-9DD2-40B2-B5C7-C5FC50756052}

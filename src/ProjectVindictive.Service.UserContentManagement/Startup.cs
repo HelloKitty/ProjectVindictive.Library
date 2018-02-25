@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Amazon;
+using Amazon.Runtime;
 using HaloLive.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace ProjectVindictive
 {
@@ -31,6 +35,26 @@ namespace ProjectVindictive
 			// Add framework services.
 			services.AddMvc();
 			services.AddHaloLiveAuthorization();
+
+			//Register and load the DB config
+			services.RegisterDatabaseConfigOptions(Configuration);
+			IOptions<DatabaseConfigModel> dbConfig = services.GetDatabaseConfig();
+			services.AddDbContext<WorldDatabaseContext>(options => options.UseMySql(dbConfig.Value.ConnectionString));
+
+			//To communicate with all S3 regions we'll need to enable signature version 4 which uses a newer
+			//signature computation. Some regions don't support older versions so this is REQUIRED
+			AWSConfigsS3.UseSignatureVersion4 = true;
+
+			//TODO: Move to Store/File. Don't let this go into prod. DO NOT COMMIT
+			CREDENTIALS HERE;
+
+			services.RegisterConfigOptions<AmazonS3Config>(Configuration);
+			services.AddSingleton<IUploadUrlBuilder, AmazonS3URLBuilder>();
+
+			services.AddTransient<IWorldEntryRepository, WorldDatabaseRepository>();
+
+			//TODO: Handle this differently
+			services.AddSingleton<AWSCredentials>(sp => new StoredProfileAWSCredentials("ProjectVindictive.UCM"));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

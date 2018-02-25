@@ -10,16 +10,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.3.21.14" />
+    <PackageReference Include="AWSSDK.S3" Version="3.3.17" />
     <PackageReference Include="HaloLive.Hosting.Authorization.Server" Version="2.0.5" />
     <PackageReference Include="HaloLive.Hosting.Server" Version="2.0.5" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="1.1.2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(NoTools)' != 'True'">
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectVindictive.Database.Common\ProjectVindictive.Database.Common.csproj" />
+    <ProjectReference Include="..\ProjectVindictive.Database.Worlds\ProjectVindictive.Database.Worlds.csproj" />
+    <ProjectReference Include="..\ProjectVindictive.Models.UserContentManagement\ProjectVindictive.Models.UserContentManagement.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

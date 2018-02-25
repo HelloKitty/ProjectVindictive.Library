@@ -1,4 +1,4 @@
-dotnet restore HaloLive.Authentication.Service.sln
+dotnet restore ProjectVindictive.Library.sln
 dotnet publish src/ProjectVindictive.Service.Authentication/ProjectVindictive.Service.Authentication.csproj -c debug
 dotnet publish src/ProjectVindictive.Service.UserContentManagement/ProjectVindictive.Service.UserContentManagement.csproj -c debug
 
