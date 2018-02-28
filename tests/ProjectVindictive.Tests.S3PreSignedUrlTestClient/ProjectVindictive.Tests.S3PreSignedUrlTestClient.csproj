@@ -48,5 +48,37 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ProjectVindictive.Client.World\ProjectVindictive.Client.World.csproj">
+      <Project>{CE70F72B-F1F6-4A79-8DF1-0001A79E8E47}</Project>
+      <Name>ProjectVindictive.Client.World</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ProjectVindictive.Models.Game.World\ProjectVindictive.Models.Game.World.csproj">
+      <Project>{088b4b1f-921c-4154-b6c6-8f66a6fd0696}</Project>
+      <Name>ProjectVindictive.Models.Game.World</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ProjectVindictive.Models.UserContentManagement\ProjectVindictive.Models.UserContentManagement.csproj">
+      <Project>{ccca468e-c603-4857-8ddc-bc1dadc0bf8a}</Project>
+      <Name>ProjectVindictive.Models.UserContentManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\ProjectVindictive.SDK.Editor.Build\ProjectVindictive.SDK.Editor.Build.csproj">
+      <Project>{47BEE5F7-F1AC-4C9A-A371-BC244FB4E6E3}</Project>
+      <Name>ProjectVindictive.SDK.Editor.Build</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="TypeSafe.Http.Net.Core">
+      <Version>2.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="TypeSafe.Http.Net.HttpClient">
+      <Version>2.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="TypeSafe.Http.Net.Serializer.JsonNET">
+      <Version>2.2.10</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

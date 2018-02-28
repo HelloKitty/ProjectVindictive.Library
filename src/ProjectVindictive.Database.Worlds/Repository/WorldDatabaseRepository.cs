@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ProjectVindictive
@@ -34,6 +35,27 @@ namespace ProjectVindictive
 
 			//Return the model so that it can be accessed by caller. They'll likely need access to the GUID.
 			return entry.Entity;
+		}
+
+		/// <inheritdoc />
+		public async Task<bool> HasEntry(int worldId)
+		{
+			if(worldId < 0) throw new ArgumentOutOfRangeException(nameof(worldId));
+
+			//TODO: Convert API to use long key. Or abstract key type.
+			//Use find so it can be cached because likely to be called GetWorldEntry
+			return null != (await Context.WorldEntries.FindAsync((long)worldId));
+		}
+
+		/// <inheritdoc />
+		public async Task<WorldEntryModel> GetWorldEntry(int worldId)
+		{
+			if(!await HasEntry(worldId))
+				throw new InvalidOperationException($"Entry {worldId} is not in the world entry.");
+
+			//TODO: Convert API to use long key. Or abstract key type.
+			//We use find because it's likely cached
+			return await Context.WorldEntries.FindAsync((long)worldId);
 		}
 	}
 }

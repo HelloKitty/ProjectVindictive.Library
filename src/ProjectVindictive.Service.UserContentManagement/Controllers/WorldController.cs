@@ -26,15 +26,15 @@ namespace ProjectVindictive
 
 			Logger = logger;
 		}
-		
+
 		/// <summary>
 		/// POST request that requests an upload URL for a world.
 		/// The user must be authorized.
 		/// </summary>
-		/// <returns>A <see cref="UploadUrlResponseModel"/> that either contains error information or the upload URL if it was successful.</returns>
+		/// <returns>A <see cref="RequestedUrlResponseModel"/> that either contains error information or the upload URL if it was successful.</returns>
 		[HttpPost]
 		[Authorize]
-		public async Task<IActionResult> RequestWorldUploadUrl([FromServices] IWorldEntryRepository worldEntryRepository, [FromServices] IUploadUrlBuilder urlBuilder)
+		public async Task<IActionResult> RequestWorldUploadUrl([FromServices] IWorldEntryRepository worldEntryRepository, [FromServices] IStorageUrlBuilder urlBuilder)
 		{
 			if(worldEntryRepository == null) throw new ArgumentNullException(nameof(worldEntryRepository));
 
@@ -51,9 +51,10 @@ namespace ProjectVindictive
 				if(Logger.IsEnabled(LogLevel.Error))
 					Logger.LogError($"Error: Encountered authorized user with unparsable UserId from User: {HaloLiveUserManager.GetUserName(User)}.");
 
-				return new JsonResult(UploadUrlResponseModel.CreateFailure("Failed to authorize action.", UploadUrlResponseCode.AuthorizationFailed));
+				return new JsonResult(RequestedUrlResponseModel.CreateFailure("Failed to authorize action.", RequestedUrlResponseCode.AuthorizationFailed));
 			}
 
+			//TODO: Abstract this behind an issuer
 			Guid worldGuid = Guid.NewGuid();
 
 			//TODO: Check if the result is valid? We should maybe return bool from this API
@@ -67,10 +68,13 @@ namespace ProjectVindictive
 				if(Logger.IsEnabled(LogLevel.Error))
 					Logger.LogError($"Failed to create world upload URL for {HaloLiveUserManager.GetUserName(User)}:{HaloLiveUserManager.GetUserId(User)} with GUID: {worldGuid}.");
 
-				return new JsonResult(UploadUrlResponseModel.CreateFailure("Upload service unavailable.", UploadUrlResponseCode.UploadUnavailable));
+				return new JsonResult(RequestedUrlResponseModel.CreateFailure("Upload service unavailable.", RequestedUrlResponseCode.ServiceUnavailable));
 			}
 
-			return new JsonResult(UploadUrlResponseModel.CreateSuccess(uploadUrl));
+			if(Logger.IsEnabled(LogLevel.Information))
+				Logger.LogInformation($"Success. Sending {HaloLiveUserManager.GetUserName(User)} URL: {uploadUrl}");
+
+			return new JsonResult(RequestedUrlResponseModel.CreateSuccess(uploadUrl));
 		}
 	}
 }

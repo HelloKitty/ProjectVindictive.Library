@@ -26,9 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectVindictive.Database.Common\ProjectVindictive.Database.Common.csproj" />
     <ProjectReference Include="..\ProjectVindictive.Database.Worlds\ProjectVindictive.Database.Worlds.csproj" />
     <ProjectReference Include="..\ProjectVindictive.Models.UserContentManagement\ProjectVindictive.Models.UserContentManagement.csproj" />
+    <ProjectReference Include="..\ProjectVindictive.Server.AmazonS3\ProjectVindictive.Server.AmazonS3.csproj" />
+    <ProjectReference Include="..\ProjectVindictive.Server.Common\ProjectVindictive.Server.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,7 +9,7 @@ namespace ProjectVindictive
 	/// <summary>
 	/// 
 	/// </summary>
-	public interface IWorldEntryRepository
+	public interface IWorldEntryRepository : IReadOnlyWorldEntryRepository
 	{
 		/// <summary>
 		/// Adds a new <see cref="WorldEntryModel"/> to the database associated with
