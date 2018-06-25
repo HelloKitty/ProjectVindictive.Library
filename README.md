@@ -1,2 +1,5 @@
 # ProjectVindictive.Library
-Library repository for next-generation VR Social MMO platform.
+
+Prototype for user-created world in Unity3D using an ASP Core backend, AWS S3 for content delivery and Unity3D.
+
+See the prototype in action here: https://www.youtube.com/watch?v=PJJaTIiIyZQ
